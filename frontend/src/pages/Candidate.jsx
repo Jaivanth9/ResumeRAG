@@ -9,7 +9,7 @@ export default function Candidate() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const API = import.meta.env.VITE_API || "http://localhost:4000";
+  const API = import.meta.env.VITE_API || "https://resumerag-rf8i.onrender.com";
 
   useEffect(() => {
     const fetchResume = async () => {
