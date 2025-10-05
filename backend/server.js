@@ -9,9 +9,17 @@ const resumesRouter = require('./routes/resumes');
 const jobsRouter = require('./routes/jobs');
 
 const app = express();
+const allowedOrigins = ['https://resumeragapp.vercel.app', 'http://localhost:5173'];
 app.use(cors({
-  origin: true,
-  credentials: true,
+  origin: function(origin, callback){
+    if(!origin) return callback(null, true); // allow non-browser requests like Postman
+    if(allowedOrigins.indexOf(origin) !== -1){
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
 }));
 
 app.use(morgan('dev'));
