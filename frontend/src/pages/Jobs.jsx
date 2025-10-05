@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const API = import.meta.env.VITE_API || "https://resumerag-rf8i.onrender.com";
+const API = import.meta.env.VITE_API || "http://localhost:4000";
 
 export default function Jobs() {
   const [title, setTitle] = useState("");

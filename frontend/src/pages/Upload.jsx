@@ -4,7 +4,7 @@ import axios from "axios";
 export default function Upload() {
   const [files, setFiles] = useState([]);
   const [message, setMessage] = useState("");
-  const API = import.meta.env.VITE_API || "https://resumerag-rf8i.onrender.com";
+  const API = import.meta.env.VITE_API || "http://localhost:4000";
 
   const handleFiles = (e) => {
     setFiles([...e.target.files]);
